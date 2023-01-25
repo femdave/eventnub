@@ -34,6 +34,7 @@ const FirebaseContext = createContext({
   login: () => Promise.resolve(),
   register: () => Promise.resolve(),
   loginWithGoogle: () => Promise.resolve(),
+  loginWithFaceBook: () => Promise.resolve(),
   logout: () => Promise.resolve(),
 });
 
@@ -73,6 +74,11 @@ function FirebaseProvider({ children }) {
 
   const loginWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
+    return firebase.auth().signInWithPopup(provider);
+  };
+
+  const loginWithFacebook = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
     return firebase.auth().signInWithPopup(provider);
   };
 
@@ -137,6 +143,7 @@ function FirebaseProvider({ children }) {
         login,
         register,
         loginWithGoogle,
+        loginWithFacebook,
         logout,
         resetPassword,
         updateProfile,

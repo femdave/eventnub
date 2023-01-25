@@ -63,7 +63,7 @@ export default function Auth() {
         <ContentStyle>
           <AuthCard>
             <Typography variant="subtitle1" sx={{ mb: 5 }}>
-              Withdraw cash from crypto
+              Bringing your fav celebs close to you
             </Typography>
 
             <Stack direction="column" spacing={2}>
