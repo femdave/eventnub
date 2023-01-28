@@ -78,10 +78,10 @@ export default function DashboardNavbar({ isOpenSidebar, onCloseSidebar }) {
             {isDesktop && !isCollapse && (
               <>
                 <Typography variant="h5" color="primary.main">
-                  Dose
+                  Event
                 </Typography>
                 <Typography variant="h5">
-                  amp
+                  nub
                 </Typography>
               </>
             )}
