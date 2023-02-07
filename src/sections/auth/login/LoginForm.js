@@ -112,9 +112,9 @@ export default function LoginForm() {
 
         <Typography variant="body2" sx={{ mt: 4, mb: 4 }}>
           Forgot your password?{' '}
-          <Link component={RouterLink} variant="subtitle2" to={PATH_AUTH.resetPassword} underline="none">
+          {/* <Link component={RouterLink} variant="subtitle2" to={PATH_AUTH.resetPassword} underline="none">
             Request a new one
-          </Link>
+          </Link> */}
         </Typography>
 
         <LoadingButton

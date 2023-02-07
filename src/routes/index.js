@@ -16,11 +16,25 @@ const Loadable = (Component) => (props) => {
   const { pathname } = useLocation();
 
   return (
-    <Suspense fallback={<LoadingScreen isDashboard={pathname.includes('/dashboard')} />}>
+    <Suspense fallback={<LoadingScreen isDashboard={pathname?.includes('/dashboard')} />}>
       <Component {...props} />
     </Suspense>
   );
 };
+
+const Auth = Loadable(lazy(() => import('../pages/auth/Auth')));
+const Login = Loadable(lazy(() => import('../pages/auth/Login')));
+const Register = Loadable(lazy(() => import('../pages/auth/Register')));
+
+// Dashboard
+const Events = Loadable(lazy(() => import('../pages/dashboard/Events')));
+
+// Main
+const HomePage = Loadable(lazy(() => import('../pages/Home')));
+const ComingSoon = Loadable(lazy(() => import('../pages/ComingSoon')));
+const Maintenance = Loadable(lazy(() => import('../pages/Maintenance')));
+const Page500 = Loadable(lazy(() => import('../pages/Page500')));
+const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 
 export default function Router() {
   return useRoutes([
@@ -57,6 +71,22 @@ export default function Router() {
 
     // Dashboard Routes with Nav
     {
+      path: 'login',
+      element: (
+        <GuestGuard>
+          <Login />
+        </GuestGuard>
+      ),
+    },
+    {
+      path: 'register',
+      element: (
+        <GuestGuard>
+          <Register />
+        </GuestGuard>
+      ),
+    },
+    {
       path: 'dashboard',
       element: (
         <AuthGuard>
@@ -86,22 +116,6 @@ export default function Router() {
       element: <HomePage />,
       index: true,
     },
-    {
-      path: '/login',
-      element: (
-        <GuestGuard>
-          <Login />
-        </GuestGuard>
-      ),
-    },
-    {
-      path: '/register',
-      element: (
-        <GuestGuard>
-          <Register />
-        </GuestGuard>
-      ),
-    },
 
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
@@ -110,16 +124,3 @@ export default function Router() {
 // IMPORT COMPONENTS
 
 // Authentication
-const Auth = Loadable(lazy(() => import('../pages/auth/Auth')));
-const Login = Loadable(lazy(() => import('../pages/auth/Login')));
-const Register = Loadable(lazy(() => import('../pages/auth/Register')));
-
-// Dashboard
-const Events = Loadable(lazy(() => import('../pages/dashboard/Events')));
-
-// Main
-const HomePage = Loadable(lazy(() => import('../pages/Home')));
-const ComingSoon = Loadable(lazy(() => import('../pages/ComingSoon')));
-const Maintenance = Loadable(lazy(() => import('../pages/Maintenance')));
-const Page500 = Loadable(lazy(() => import('../pages/Page500')));
-const NotFound = Loadable(lazy(() => import('../pages/Page404')));
