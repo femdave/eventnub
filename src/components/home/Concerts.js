@@ -30,14 +30,12 @@ export default function Concerts() {
           }}
         >
           <Typography
-            variant="h6"
-            component="h1"
             sx={{
               color: '#000000',
               fontWeight: '600px',
-              fontSize: '32px',
+              fontSize: '36px',
               lineHeight: '38.7px',
-              [theme.breakpoints.down('sm')]: { fontSize: 16 },
+              [theme.breakpoints.down('sm')]: { fontSize: 16, width: '100', textAlign: 'center' },
             }}
           >
             Up Coming Concerts
@@ -46,16 +44,23 @@ export default function Concerts() {
             <SearchBar />
           </Box>
         </Box>
-        <Grid container spacing={3} sx={{ marginTop: '15px' }}>
+        <Grid container spacing={5} sx={{ marginTop: '15px' }}>
           {displayData.map((item) => (
-            <Grid item xs={12} md={4} key={item.id}>
+            <Grid item sm={12} md={4} lg={4} key={item.id}>
               <Paper
                 elevation={10}
-                sx={{ height: '100%', width: '85%', background: '#fff', borderRadius: '8px', position: 'relative' }}
+                sx={{ height: '100%', width: '100%', background: '#fff', borderRadius: '8px', position: 'relative' }}
               >
-                <Link to="/auth">
-                  <img src={item.imageUrl} alt="Live concert" />
-                </Link>
+                <Box>
+                  <Link to="/auth">
+                    <img
+                      style={{ borderTopLeftRadius: '8px', width: '100%', borderTopRightRadius: '8px' }}
+                      src={item.imageUrl}
+                      alt="Live concert"
+                    />
+                  </Link>
+                </Box>
+
                 <Box
                   sx={{
                     background: '#fff',

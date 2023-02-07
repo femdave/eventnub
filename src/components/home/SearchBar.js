@@ -25,11 +25,19 @@ const SearchBar = () => {
         width: '100%',
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column',
-          width: '90%',
+          width: '100%',
         },
       }}
     >
-      <Box sx={{ width: '100%' }}>
+      <Box
+        sx={{
+          width: '100%',
+          border: '1px solid #F4F4F4',
+          background: '#F4F4F4',
+          paddingLeft: '10px',
+          marginRight: '10px',
+        }}
+      >
         <TextField
           label="Concert Name"
           value={value1}
@@ -39,10 +47,10 @@ const SearchBar = () => {
           sx={{
             marginRight: '16px',
             outline: 'none',
-            padding: '5px',
             background: '#F4F4F4',
-            height: '100%',
+            height: '50px',
             width: '100%',
+            padding: '10px',
             [theme.breakpoints.down('sm')]: {
               width: '100%',
               height: '100%',
@@ -51,13 +59,22 @@ const SearchBar = () => {
         />
       </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Select value={value2} onChange={handleChange2} displayEmpty style={{ marginRight: '10px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          width: '100%',
+          [theme.breakpoints.down('sm')]: {
+            marginTop: '10px',
+          },
+        }}
+      >
+        <Select value={value2} onChange={handleChange2} displayEmpty style={{ marginRight: '10px', height: '40px' }}>
           <MenuItem value="">Artist</MenuItem>
           <MenuItem value={10}>Option 1</MenuItem>
           <MenuItem value={20}>Option 2</MenuItem>
         </Select>
-        <Select value={value2} onChange={handleChange2} displayEmpty style={{ marginRight: '10px' }}>
+        <Select value={value2} onChange={handleChange2} displayEmpty style={{ marginRight: '10px', height: '40px' }}>
           <MenuItem value="">Date</MenuItem>
           <MenuItem value={10}>Option 1</MenuItem>
           <MenuItem value={20}>Option 2</MenuItem>
@@ -66,8 +83,8 @@ const SearchBar = () => {
           variant="contained"
           disableElevation
           sx={{
-            width: '20vw',
-            height: '7vh',
+            width: '200px',
+            height: '40px',
             background: '#FF6C2C',
             boxShadow: '0',
             borderRadius: '20px',

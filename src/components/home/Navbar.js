@@ -35,7 +35,9 @@ export default function Navbar() {
 
   return (
     <AppBar position="static" sx={{ background: 'transparent', boxShadow: 'none', position: 'absolute', zIndex: '1' }}>
-      <Toolbar>
+      <Toolbar style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+        {isMatch && <Box />}
+
         <Box style={{ display: 'flex', alignItems: 'center' }}>
           <StyledNavlink to={'/'}>
             <img src={logoImg} alt="logo" style={{ marginRight: '10px' }} />

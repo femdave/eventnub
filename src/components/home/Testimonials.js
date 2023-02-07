@@ -4,7 +4,7 @@ import SliderCom from './SliderCom';
 
 export default function Testimonials() {
   return (
-    <Container maxWidth="xl" sx={{ height: '80vh' }}>
+    <Container maxWidth="xl" sx={{ height: '60vh' }}>
       <Box
         sx={{
           display: 'flex',

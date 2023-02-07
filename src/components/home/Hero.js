@@ -11,7 +11,7 @@ function Hero() {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    height: '100vh',
+    height: 'fit-content',
     position: 'relative',
     '&::after': {
       content: '" "',
@@ -33,14 +33,23 @@ function Hero() {
             alignContent: 'center',
             justifyContent: 'center',
             position: 'relative',
+            padding: '10% 0 30% 0',
+            [theme.breakpoints.down('sm')]: { padding: '5% 0 5% 0', height: '40vh' },
+          }}
+          lg={{
+            height: 'fit-content',
           }}
         >
           <Box
             sx={{
-              marginTop: '200px',
               position: 'absolute',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
               zIndex: '1',
-              [theme.breakpoints.down('sm')]: { marginTop: '100px', marginRight: '120px', width: '100vw' },
+              width: '100%',
+              [theme.breakpoints.down('sm')]: { marginTop: '100px' },
             }}
           >
             <Typography
@@ -49,8 +58,7 @@ function Hero() {
                 fontSize: '40px',
                 color: '#fff',
                 fontWeight: '800',
-                marginLeft: '145px',
-                [theme.breakpoints.down('sm')]: { fontSize: '1em' },
+                [theme.breakpoints.down('sm')]: { fontSize: '1.5em', fontWeight: 'normal' },
               }}
             >
               Made For Artist & Fans
@@ -61,8 +69,7 @@ function Hero() {
                 fontWeight: '400',
                 color: '#fff',
                 align: 'center',
-                marginLeft: '80px',
-                [theme.breakpoints.down('sm')]: { fontSize: '0.5em', marginLeft: '140px' },
+                [theme.breakpoints.down('sm')]: { fontSize: '1em', fontWeight: 'normal' },
               }}
             >
               Don’t Miss Out on Your Next Favorite Concert
@@ -73,8 +80,7 @@ function Hero() {
                 fontWeight: '400',
                 color: '#fff',
                 align: 'center',
-                marginLeft: '120px',
-                [theme.breakpoints.down('sm')]: { fontSize: '0.5em', marginLeft: '155px' },
+                [theme.breakpoints.down('sm')]: { fontSize: '1em', fontWeight: 200 },
               }}
             >
               Win A Free or Sponsored Ticket Now!
@@ -84,7 +90,7 @@ function Hero() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginTop: '120px',
+                marginTop: '40px',
                 [theme.breakpoints.down('sm')]: { marginTop: '40px' },
               }}
             >
@@ -95,13 +101,13 @@ function Hero() {
                   height: '10vh',
                   boxShadow: 'none',
                   backgroundColor: '#1358A5',
-                  marginLeft: '70px',
-                  [theme.breakpoints.down('sm')]: { width: '125px', height: '25px' },
+                  padding: '0 20px',
+                  [theme.breakpoints.down('sm')]: { width: '50vw', height: '50px' },
                 }}
               >
                 <Typography
                   component="h5"
-                  sx={{ color: '#fff', fontWeight: '700', [theme.breakpoints.down('sm')]: { fontSize: '8px' } }}
+                  sx={{ color: '#fff', fontWeight: '700', [theme.breakpoints.down('sm')]: { fontSize: '12px' } }}
                 >
                   Find Your Next Concert
                 </Typography>
