@@ -37,7 +37,7 @@ import { CollapseDrawerProvider } from './contexts/CollapseDrawerContext';
 import { FirebaseProvider } from './contexts/FirebaseContext';
 
 //
-import './index.css';
+
 import App from './App';
 
 // ----------------------------------------------------------------------

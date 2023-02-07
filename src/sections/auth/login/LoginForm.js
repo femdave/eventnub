@@ -62,16 +62,16 @@ export default function LoginForm() {
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
         <Stack spacing={3}>
           <Box>
-            <Typography variant="body1">Email address</Typography>
+            {/* <Typography variant="body1">Email address</Typography> */}
             <InputStyle
               fullWidth
               size="large"
-              placeholder="What's your email address"
+              placeholder="Email"
               {...emailFieldProps}
               InputProps={{
                 startAdornment: (
-                  <InputAdornment position="start">
-                    <Iconify icon="eva:email-outline" sx={{ color: 'text.disabled', width: 24, height: 24 }} />
+                  <InputAdornment position="start" sx={{ backgroundColor: 'blue', height: '100%', padding: '0' }}>
+                    <Iconify icon="eva:person-outline" sx={{ color: 'text.disabled', width: 24, height: 24 }} />
                   </InputAdornment>
                 ),
               }}
@@ -82,11 +82,11 @@ export default function LoginForm() {
           </Box>
 
           <Box>
-            <Typography variant="body1">Password</Typography>
+            {/* <Typography variant="body1">Password</Typography> */}
             <InputStyle
               fullWidth
               size="large"
-              placeholder="Choose a password"
+              placeholder="Password"
               type={showPassword ? 'text' : 'password'}
               {...getFieldProps('password')}
               InputProps={{
