@@ -25,35 +25,35 @@ const Loadable = (Component) => (props) => {
 export default function Router() {
   return useRoutes([
     // Authentication Routes
-    {
-      path: 'auth',
-      children: [
-        {
-          element: (
-            <GuestGuard>
-              <Auth />
-            </GuestGuard>
-          ),
-          index: true,
-        },
-        {
-          path: 'login',
-          element: (
-            <GuestGuard>
-              <Login />
-            </GuestGuard>
-          ),
-        },
-        {
-          path: 'register',
-          element: (
-            <GuestGuard>
-              <Register />
-            </GuestGuard>
-          ),
-        },
-      ],
-    },
+    // {
+    //   path: 'auth',
+    //   children: [
+    //     {
+    //       element: (
+    //         <GuestGuard>
+    //           <Auth />
+    //         </GuestGuard>
+    //       ),
+    //       index: true,
+    //     },
+    //     {
+    //       path: 'login',
+    //       element: (
+    //         <GuestGuard>
+    //           <Login />
+    //         </GuestGuard>
+    //       ),
+    //     },
+    //     {
+    //       path: 'register',
+    //       element: (
+    //         <GuestGuard>
+    //           <Register />
+    //         </GuestGuard>
+    //       ),
+    //     },
+    //   ],
+    // },
 
     // Dashboard Routes with Nav
     {
@@ -86,6 +86,23 @@ export default function Router() {
       element: <HomePage />,
       index: true,
     },
+    {
+      path: '/login',
+      element: (
+        <GuestGuard>
+          <Login />
+        </GuestGuard>
+      ),
+    },
+    {
+      path: '/register',
+      element: (
+        <GuestGuard>
+          <Register />
+        </GuestGuard>
+      ),
+    },
+
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }

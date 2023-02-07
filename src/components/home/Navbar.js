@@ -78,7 +78,7 @@ export default function Navbar() {
               >
                 My Tickets <Sircle sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>0</Sircle>
               </StyledNavlink>
-              <StyledNavlink to="/auth" exact activeStyle={activeStyle}>
+              <StyledNavlink to="/register" exact activeStyle={activeStyle}>
                 Sign Up
               </StyledNavlink>
             </NavbarLinksBox>
